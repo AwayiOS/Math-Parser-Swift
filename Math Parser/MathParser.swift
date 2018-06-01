@@ -8,7 +8,7 @@
 
 import Foundation
 
-func evaluateExpression(expression: String, angleUnit: MathParserAngleUnit) -> Double? {
+func evaluateExpression(_ expression: String, _ angleUnit: MathParserAngleUnit) -> Double? {
     mathParserAngleUnits = angleUnit
     
     var buffer = ""
@@ -20,10 +20,10 @@ func evaluateExpression(expression: String, angleUnit: MathParserAngleUnit) -> D
     
     
     //MARK: Parsing to arrays
-    mainLoop: for index in indices(expression) {
+    mainLoop: for index in 0..<expression.count {
         let character = expression[index]
-        
-        if (character == "-" && index == expression.startIndex) || (character == "-" && expression[index.predecessor()] == "(") {
+        let charIndex: String.Index = expression.index(expression.startIndex, offsetBy: index)
+        if (character == "-" && charIndex == expression.startIndex) || (character == "-" && expression[expression.index(before: charIndex)] == "(") {
             var operation = Negation()
             operation.priority += normalPriority
             operation.startIndex = numbers.count
@@ -253,11 +253,11 @@ func evaluateExpression(expression: String, angleUnit: MathParserAngleUnit) -> D
         
         numbers[startIndex] = operation.evaluate(numbersToEvaluate)
         
-        for i in 1..<operation.length {
-            numbers.removeAtIndex(startIndex + 1)
+        for _ in 1..<operation.length {
+            numbers.remove(at: startIndex + 1)
         }
         
-        operations.removeAtIndex(maxPriorityIndex)
+        operations.remove(at: maxPriorityIndex)
         
         let toRemove = operation.length - 1
         if toRemove > 0 {

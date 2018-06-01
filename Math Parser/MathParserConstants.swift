@@ -14,7 +14,7 @@ protocol MathParserConstant {
 
 
 struct PI: MathParserConstant {
-    var value = M_PI
+    var value = Double.pi
 }
 
 struct E: MathParserConstant {

@@ -26,7 +26,7 @@ protocol MathParserOperator {
     var startIndex: Int {get set}
     var length: Int {get}
     
-    func evaluate(numbers: [Double]) -> Double
+    func evaluate(_ numbers: [Double]) -> Double
 }
 
 
@@ -38,7 +38,7 @@ struct Addition: MathParserOperator {
     var startIndex = -1
     var length = 2
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         return numbers[0] + numbers[1]
     }
 }
@@ -49,7 +49,7 @@ struct Subtraction: MathParserOperator {
     var startIndex = -1
     var length = 2
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         return numbers[0] - numbers[1]
     }
 }
@@ -60,7 +60,7 @@ struct Multiplication: MathParserOperator {
     var startIndex = -1
     var length = 2
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         return numbers[0] * numbers[1]
     }
 }
@@ -71,7 +71,7 @@ struct Division: MathParserOperator {
     var startIndex = -1
     var length = 2
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         return numbers[0] / numbers[1]
     }
 }
@@ -82,7 +82,7 @@ struct Negation: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         return -numbers[0]
     }
 }
@@ -93,7 +93,7 @@ struct Power: MathParserOperator {
     var startIndex = -1
     var length = 2
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         return pow(numbers[0], numbers[1])
     }
 }
@@ -104,7 +104,7 @@ struct Root: MathParserOperator {
     var startIndex = -1
     var length = 2
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         return pow(numbers[1], 1.0 / numbers[0])
     }
 }
@@ -115,7 +115,7 @@ struct Logarithm: MathParserOperator {
     var startIndex = -1
     var length = 2
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         if numbers[0] <= 0 {
             return Double.infinity
         }
@@ -129,7 +129,7 @@ struct Factorial: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         let number = numbers[0]
         
         if number > 170 || number < 1 || number != Double(Int(number)) {
@@ -151,7 +151,7 @@ struct Percentage: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         return numbers[0] / 100.0
     }
 }
@@ -162,7 +162,7 @@ struct Sin: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         let number = numbers[0]
         
         var result: Double
@@ -192,7 +192,7 @@ struct Cos: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         let number = numbers[0]
         
         var result: Double
@@ -222,7 +222,7 @@ struct Tan: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         let number = numbers[0]
         
         var result: Double
@@ -252,7 +252,7 @@ struct Sinh: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         let number = numbers[0]
         
         var result: Double
@@ -282,7 +282,7 @@ struct Cosh: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         let number = numbers[0]
         
         var result: Double
@@ -312,7 +312,7 @@ struct Tanh: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         let number = numbers[0]
         
         var result: Double
@@ -342,7 +342,7 @@ struct Asin: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         var result = asin(numbers[0])
 
         if mathParserAngleUnits == .Degrees {
@@ -367,7 +367,7 @@ struct Acos: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         var result = acos(numbers[0])
         
         if mathParserAngleUnits == .Degrees {
@@ -392,7 +392,7 @@ struct Atan: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         var result = atan(numbers[0])
         
         if mathParserAngleUnits == .Degrees {
@@ -417,7 +417,7 @@ struct Asinh: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         var result = asinh(numbers[0])
         
         if mathParserAngleUnits == .Degrees {
@@ -442,7 +442,7 @@ struct Acosh: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         var result = acosh(numbers[0])
         
         if mathParserAngleUnits == .Degrees {
@@ -466,7 +466,7 @@ struct Atanh: MathParserOperator {
     var startIndex = -1
     var length = 1
     
-    func evaluate(numbers: [Double]) -> Double {
+    func evaluate(_ numbers: [Double]) -> Double {
         var result = atanh(numbers[0])
         
         if mathParserAngleUnits == .Degrees {
@@ -490,7 +490,25 @@ struct Atanh: MathParserOperator {
 let mathParserBracketPriority = 10
 let mathParserPrecision = 1e-15
 var mathParserAngleUnits = MathParserAngleUnit.Degrees
-let mathParserOperators: [String: MathParserOperator] = ["+": Addition(), "-": Subtraction(), "×": Multiplication(), "÷": Division(),
-                                                     "^": Power(), "√": Root(), "log": Logarithm(), "!": Factorial(), "sin": Sin(),
-                                                     "cos": Cos(), "tan": Tan(), "asin": Asin(), "Acos": Acos(), "atan": Atan(),
-                                                     "sinh": Sinh(), "cosh": Cosh(), "tanh": Tanh(), "asinh": Asinh(), "acosh": Acosh(), "atanh": Atanh(), "%": Percentage()]
+let mathParserOperators: [String: MathParserOperator] = ["+": Addition(),
+                                                         "-": Subtraction(),
+                                                         "×": Multiplication(),
+                                                         "*": Multiplication(),
+                                                         "÷": Division(),
+                                                         "^": Power(),
+                                                         "√": Root(),
+                                                         "log": Logarithm(),
+                                                         "!": Factorial(),
+                                                         "sin": Sin(),
+                                                         "cos": Cos(),
+                                                         "tan": Tan(),
+                                                         "asin": Asin(),
+                                                         "Acos": Acos(),
+                                                         "atan": Atan(),
+                                                         "sinh": Sinh(),
+                                                         "cosh": Cosh(),
+                                                         "tanh": Tanh(),
+                                                         "asinh": Asinh(),
+                                                         "acosh": Acosh(),
+                                                         "atanh": Atanh(),
+                                                         "%": Percentage()]

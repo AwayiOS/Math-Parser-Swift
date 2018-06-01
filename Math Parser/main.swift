@@ -8,27 +8,18 @@
 
 import Foundation
 
-let expression = "cos(-0)"//"3123234×91243+7^3+32!÷16-asinh(cos(√(2,π+e)))"
-
-let start = NSDate.timeIntervalSinceReferenceDate()
+//let expression = "2+1-(2*6)"//"3123234×91243+7^3+32!÷16-asinh(cos(√(2,π+e)))"
+let expression = "1234769.1234*1238746-1234(-12)^2" //1529565134839.26
+let start = NSDate.timeIntervalSinceReferenceDate
 let result = evaluateExpression(expression, MathParserAngleUnit.Degrees)
-let end = NSDate.timeIntervalSinceReferenceDate()
+let end = NSDate.timeIntervalSinceReferenceDate
 
 let difference = Double(end) - Double(start)
 
-var resultString: String
-if let unwrapedResult = result {
-    if unwrapedResult == Double.infinity {
-        resultString = "Math error"
-    } else if unwrapedResult == -0.0 {
-        resultString = "\(-unwrapedResult)"
-        resultString = mathParserFormatNumber(resultString)
-    } else {
-        resultString = "\(unwrapedResult)"
-        resultString = mathParserFormatNumber(resultString)
-    }
-} else {
-    resultString = "Syntax error"
+if let res = result {
+    print("\(expression) = \(String(describing: res))\nTime: \(difference * 1000)ms")
 }
-
-println("\(mathParserFormatExpression(expression)) = \(resultString)\nTime: \(difference * 1000)ms")
+else
+{
+    print("Failed")
+}

@@ -27,27 +27,22 @@ extension Character {
     }
 }
 
-extension Dictionary {
-    func numberOfKeysStartingWith(searchString: String) -> Int? {
+extension Dictionary where Key == String {
+    func numberOfKeysStartingWith(_ searchString: String) -> Int {
         var count = 0
-        
         for key in keys {
-            if !(key is String) {
-                return nil
-            }
-            
-            if (key as! String).hasPrefix(searchString) {
-                ++count
+            if key.hasPrefix(searchString) {
+                count += 1
             }
         }
         return count
     }
 }
 
-func radianToDegree(radian: Double) -> Double {
-    return radian / M_PI * 180.0
+func radianToDegree(_ radian: Double) -> Double {
+    return radian / Double.pi * 180.0
 }
 
-func degreeToRadian(degree: Double) -> Double {
-    return degree / 180.0 * M_PI
+func degreeToRadian(_ degree: Double) -> Double {
+    return degree / 180.0 * Double.pi
 }

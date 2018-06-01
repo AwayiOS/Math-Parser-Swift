@@ -19,7 +19,7 @@ var mathParserNumberSeparator: String {
     }
 }
 
-func mathParserFormatNumber(number: String) -> String {
+func mathParserFormatNumber(_ number: String) -> String {
     var mutatableNumber = number.stringByReplacingOccurrencesOfString(".", withString: mathParserDecimalSeparator, options: NSStringCompareOptions.LiteralSearch, range: nil)
     var decimalSeparatorFound = false
     
@@ -49,7 +49,7 @@ func mathParserFormatNumber(number: String) -> String {
     return mutatableNumber
 }
 
-func mathParserFormatExpression(expression: String) -> String {
+func mathParserFormatExpression(_ expression: String) -> String {
     var mutableExpression = expression.stringByReplacingOccurrencesOfString(",", withString: "; ", options: NSStringCompareOptions.LiteralSearch, range: nil)
     
     var result = ""
