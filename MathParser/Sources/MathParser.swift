@@ -8,7 +8,7 @@
 
 import Foundation
 
-func evaluateExpression(_ expression: String, _ angleUnit: MathParserAngleUnit) -> Double? {
+public func evaluateExpression(_ expression: String, _ angleUnit: MathParserAngleUnit = .Degrees) -> Double? {
     mathParserAngleUnits = angleUnit
     
     var buffer = ""
@@ -18,9 +18,8 @@ func evaluateExpression(_ expression: String, _ angleUnit: MathParserAngleUnit) 
     var numbers = [Double]() //Parsed numbers
     var operations = [MathParserOperator]() //Parsed operators
     
-    
     //MARK: Parsing to arrays
-    mainLoop: for index in 0..<expression.count {
+    for index in 0..<expression.count {
         let character = expression[index]
         let charIndex: String.Index = expression.index(expression.startIndex, offsetBy: index)
         if (character == "-" && charIndex == expression.startIndex) || (character == "-" && expression[expression.index(before: charIndex)] == "(") {

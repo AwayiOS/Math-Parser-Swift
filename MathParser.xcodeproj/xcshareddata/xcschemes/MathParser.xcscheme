@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0640"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,69 +14,80 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9914504B1B7138F8000BC725"
-               BuildableName = "Math Parser"
-               BlueprintName = "Math Parser"
-               ReferencedContainer = "container:Math Parser.xcodeproj">
+               BlueprintIdentifier = "4FF5CBC920C145AB006C71CD"
+               BuildableName = "MathParser.framework"
+               BlueprintName = "MathParser"
+               ReferencedContainer = "container:MathParser.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4FF5CBD220C145AC006C71CD"
+               BuildableName = "MathParserTests.xctest"
+               BlueprintName = "MathParserTests"
+               ReferencedContainer = "container:MathParser.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9914504B1B7138F8000BC725"
-            BuildableName = "Math Parser"
-            BlueprintName = "Math Parser"
-            ReferencedContainer = "container:Math Parser.xcodeproj">
+            BlueprintIdentifier = "4FF5CBC920C145AB006C71CD"
+            BuildableName = "MathParser.framework"
+            BlueprintName = "MathParser"
+            ReferencedContainer = "container:MathParser.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9914504B1B7138F8000BC725"
-            BuildableName = "Math Parser"
-            BlueprintName = "Math Parser"
-            ReferencedContainer = "container:Math Parser.xcodeproj">
+            BlueprintIdentifier = "4FF5CBC920C145AB006C71CD"
+            BuildableName = "MathParser.framework"
+            BlueprintName = "MathParser"
+            ReferencedContainer = "container:MathParser.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9914504B1B7138F8000BC725"
-            BuildableName = "Math Parser"
-            BlueprintName = "Math Parser"
-            ReferencedContainer = "container:Math Parser.xcodeproj">
+            BlueprintIdentifier = "4FF5CBC920C145AB006C71CD"
+            BuildableName = "MathParser.framework"
+            BlueprintName = "MathParser"
+            ReferencedContainer = "container:MathParser.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

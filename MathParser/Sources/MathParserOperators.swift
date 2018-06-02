@@ -14,7 +14,7 @@ enum MathParserOperationType {
     case Prefix, Infix, Suffix
 }
 
-enum MathParserAngleUnit {
+public enum MathParserAngleUnit {
     case Radians, Degrees
 }
 
@@ -495,6 +495,7 @@ let mathParserOperators: [String: MathParserOperator] = ["+": Addition(),
                                                          "×": Multiplication(),
                                                          "*": Multiplication(),
                                                          "÷": Division(),
+                                                         "/": Division(),
                                                          "^": Power(),
                                                          "√": Root(),
                                                          "log": Logarithm(),
