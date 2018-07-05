@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MathParser"
-  s.version      = "0.1"
+  s.version      = "1.0"
   s.source       = { :git => "https://github.com/zhaozzq/Math-Parser-Swift.git", :tag => "#{s.version}" }
   s.summary      = "Math expression parser written in swift."
   s.description  = "Math expression parser written in swift. Forked from https://github.com/zerodays/Math-Parser-Swift.git"
